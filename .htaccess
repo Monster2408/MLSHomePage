@@ -1,0 +1,27 @@
+# BEGIN WordPress
+<IfModule mod_rewrite.c>
+
+ErrorDocument 401 http://www.mlserver2020.xyz/error/401
+ErrorDocument 403 http://www.mlserver2020.xyz/error/403
+ErrorDocument 404 http://www.mlserver2020.xyz/error/404
+ErrorDocument 503 http://www.mlserver2020.xyz/error/503
+ErrorDocument 503 http://www.mlserver2020.xyz/error/522
+
+RewriteEngine on
+
+RewriteCond %{REQUEST_FILENAME} !-d
+RewriteCond %{REQUEST_FILENAME}\.php -f
+RewriteRule ^(.*)$ $1.php
+
+RewriteCond %{THE_REQUEST} ^.*/index(.html|.php|.cgi|)
+RewriteCond %{SERVER_PORT} 80
+RewriteRule ^(.*)index(.html|.php|.cgi|)$ http://www.mlserver2020.xyz/$1 [R=301,L]
+RewriteCond %{THE_REQUEST} ^.*/index(.html|.php|.cgi|)
+RewriteCond %{SERVER_PORT} 443
+RewriteRule ^(.*)index(.html|.php|.cgi|)$ https://www.mlserver2020.xyz/$1 [R=301,L]
+
+RewriteCond %{HTTP_HOST} ^(mlserver2020\.xyz)(:80)? [NC]
+RewriteRule ^(.*) http://www.mlserver2020.xyz/$1 [R=301,L]
+
+</IfModule>
+# END WordPress

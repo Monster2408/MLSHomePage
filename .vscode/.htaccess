@@ -1,0 +1,10 @@
+# BEGIN WordPress
+<IfModule mod_rewrite.c>
+RewriteEngine On
+RewriteCond %{http_host} ^mlserver.php.xdomain.jp
+RewriteRule ^(.*) http://www.mls-2020.me/$1 [R=301,L]
+
+# 特定のファイルや拡張子へのアクセスを制限する
+
+</IfModule>
+# END WordPress

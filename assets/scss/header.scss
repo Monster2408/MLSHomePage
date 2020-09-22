@@ -1,0 +1,476 @@
+$pos: 10000;
+$mainColor: #F5A9A9;
+/*ヘッダーまわりはサイトに合わせて調整してください*/
+header {
+    padding:10px;
+    background: $mainColor;
+    height: 50px; /*ヘッダーの高さ*/
+    width: 100%; /*ヘッダーの横幅*/
+    background-color: $mainColor; /*ヘッダーの背景色*/
+    color: white; /*ヘッダーの文字の色*/
+    position:fixed;/*←絶対位置*/
+    z-index: $pos;
+}
+  
+#nav-title-box {
+    background-color: #848484;
+    color: #FFF;
+    text-align: center;
+    height: 60px;
+    position: relative;
+    font-size: 40px;
+    .nav-title {
+        position: absolute;
+        top: 5px;
+        right: 0;
+        left: 0;
+        margin: auto;
+        font-size: 40px;
+    }
+}
+  
+#nav-drawer {
+    position: relative;
+}
+  
+.nav-close-img {
+    position: absolute;
+    top: 5px;
+    right: 10px;
+    margin: auto;
+    cursor: pointer;
+}
+  
+/*チェックボックス等は非表示に*/
+.nav-unshown {
+    display:none;
+}
+  
+/*アイコンのスペース*/
+#nav-open {
+    display: inline-block;
+    width: 30px;
+    height: 22px;
+    vertical-align: middle;
+    margin-right: 0;
+    span { /*ハンバーガーアイコンをCSSだけで表現*/
+        position: absolute;
+        height: 3px;/*線の太さ*/
+        width: 25px;/*長さ*/
+        border-radius: 3px;
+        background: #555;
+        display: block;
+        content: '';
+        cursor: pointer;
+        margin-right: 0;
+        &:before {
+            position: absolute;
+            height: 3px;/*線の太さ*/
+            width: 25px;/*長さ*/
+            border-radius: 3px;
+            background: #555;
+            display: block;
+            content: '';
+            cursor: pointer;
+            margin-right: 0;
+            bottom: -8px;
+        }
+        &:after {
+            position: absolute;
+            height: 3px;/*線の太さ*/
+            width: 25px;/*長さ*/
+            border-radius: 3px;
+            background: #555;
+            display: block;
+            content: '';
+            cursor: pointer;
+            margin-right: 0;
+            bottom: -16px;
+        }
+    }
+}
+  
+/*閉じる用の薄黒カバー*/
+#nav-close {
+    display: none;/*はじめは隠しておく*/
+    position: fixed;
+    z-index: 99;
+    top: 0;/*全体に広がるように*/
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: black;
+    opacity: 0;
+    transition: .3s ease-in-out;
+}
+  
+/*中身*/
+#nav-content {
+    overflow: auto;
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: $pos + 1;/*最前面に*/
+    width: 300px;/* スマホに収まるくらい */
+    height: 100%;
+    background: #fff;/*背景色*/
+    transition: .3s ease-in-out;/*滑らかに表示*/
+    -webkit-transform: translateX(-105%);
+    transform: translateX(-105%);/*左に隠しておく*/
+    ul {
+        padding: 0;
+        position: relative;
+        width: 100%;
+        a {
+            text-decoration:none;
+            color: #2d8fdd;
+            font-weight: bold;
+            li {
+                width: 100%;
+                border-left: solid 6px $mainColor;/*左側の線*/
+                background: #FDF1F1;/*背景色*/
+                margin-bottom: 3px;/*下のバーとの余白*/
+                line-height: 1.5;
+                padding: 0.5em;
+                list-style-type: none!important;/*ポチ消す*/
+                text-decoration:none;
+                color: $mainColor;
+                font-weight: bold;
+                height: 50px;
+                font-size: 20px;
+            }
+        }
+    }
+}
+  
+/*チェックが入ったらもろもろ表示*/
+#nav-input:checked ~ #nav-close {
+    display: block; /*カバーを表示*/
+    opacity: .5;
+}
+  
+#nav-input:checked ~ #nav-content {
+    -webkit-transform: translateX(0%);
+    transform: translateX(0%); /*中身を表示（右へスライド）*/
+    box-shadow: 6px 0 25px rgba(0,0,0,.15);
+}
+  
+.logo-area {
+    text-align: center;
+    margin: auto;
+}
+
+/*   Twitter   */
+/*ボックス全体*/
+.TwitterBox {
+    margin: 0;
+    padding: 0;
+    max-width: 100%;/*最大幅*/
+    label {
+        display: block;
+        margin: 1.5px 0;
+        padding : 13px 12px;
+        color: #FFF;
+        font-weight: bold;
+        background: #00acee;
+        cursor :pointer;
+        transition: all 0.5s;
+        &:before { /*アイコンを表示*/
+            font-family: "Font Awesome 5 Free";
+            content: '\f078';
+            font-weight: 900;
+            padding-right: 8px;
+        }
+        &:hover { /*ラベルホバー時*/
+            background: #00acee;
+        }
+    }
+    input { /*チェックは隠す*/
+        display: none;
+    }
+    .twitter p {
+        margin: 15px 10px
+    }
+    /*アイコンを入れ替える*/
+    .acc:checked + label:before {
+        font-family: "Font Awesome 5 Free";
+        content: '\f054';
+        font-weight: 900;
+    }
+    /*中身を非表示にしておく*/
+    .twitter {
+        height: 700px; /* ★★★ 下に表示されるリストの高さを調整する必要あり。★★★ */
+        background: #fff;
+        opacity: 1;
+        transition: 0.8s;
+    }
+    /*クリックで中身表示*/
+    .acc:checked + label + .twitter {
+        height: 0;
+        padding: 0;
+        overflow: hidden;
+        opacity: 0;
+    }
+}
+
+/*   Discord   */
+/*ボックス全体*/
+.DiscordBox {
+    margin: 0;
+    padding: 0;
+    max-width: 100%;/*最大幅*/
+    label {
+        display: block;
+        margin: 1.5px 0;
+        padding : 13px 12px;
+        color: #FFF;
+        font-weight: bold;
+        background: #7289d9;
+        cursor :pointer;
+        transition: all 0.5s;
+        &:before { /*アイコンを表示*/
+            font-family: "Font Awesome 5 Free";
+            content: '\f078';
+            font-weight: 900;
+            padding-right: 8px;
+        }
+        &:hover { /*ラベルホバー時*/
+            background: #7289d9;
+        }
+    }
+    input { /*チェックは隠す*/
+        display: none;
+    }
+    .discord p {
+        margin: 15px 10px
+    }
+    /*アイコンを入れ替える*/
+    .acc:checked + label:before {
+        font-family: "Font Awesome 5 Free";
+        content: '\f054';
+        font-weight: 900;
+    }
+    /*中身を非表示にしておく*/
+    .discord {
+        height: 600px; /* ★★★ 下に表示されるリストの高さを調整する必要あり。★★★ */
+        background: #fff;
+        opacity: 1;
+        transition: 0.8s;
+    }
+    /*クリックで中身表示*/
+    .acc:checked + label + .discord {
+        height: 0;
+        padding: 0;
+        overflow: hidden;
+        opacity: 0;
+    }
+}
+
+/* はじめから閉じてるやつ */
+.cssOpenBox {
+    margin: 0;
+    padding: 0;
+    max-width: 100%;/*最大幅*/
+    label {
+        display: block;
+        margin: 1.5px 0;
+        padding : 13px 12px;
+        color: #FFF;
+        font-weight: bold;
+        background: #848484;
+        cursor :pointer;
+        transition: all 0.5s;
+        &:before { /*アイコンを表示*/
+            font-family: "Font Awesome 5 Free";
+            content: '\f054';
+            font-weight: 900;
+            padding-right: 8px;
+        }
+        &:hover { /*ラベルホバー時*/
+            background: hsl(0, 0%, 47%); 
+        }
+    }
+    input { /*チェックは隠す*/
+        display: none;
+    }
+    /*アイコンを入れ替える*/
+    .acc:checked + label:before {
+        font-family: "Font Awesome 5 Free";
+        content: '\f078';
+        font-weight: 900;
+    }
+    /* ★★★ .sample ★★★ */
+    /*中身を非表示にしておく .sample*/
+    .sample {
+        height: 53px; /* ★★★ 下に表示されるリストの高さを調整する必要あり。★★★ */
+        background: #fff;
+        opacity: 1;
+    }
+    /*クリックで中身表示 .sample*/
+    .acc:checked + label + .sample {
+        height: 0;
+        padding: 0;
+        overflow: hidden;
+        opacity: 0;
+        transition: 0.8s;
+    }
+    .sample p {
+        margin: 15px 10px
+    }
+    /* ★★★ .sample ★★★ */
+
+    /* ★★★ .minigame ★★★ */
+    /*中身を非表示にしておく .minigame*/
+    .minigame {
+        height: 0;
+        padding: 0;
+        overflow: hidden;
+        opacity: 0;
+        transition: 0.8s;
+    }
+    /*クリックで中身表示 .minigame*/
+    .acc:checked + label + .minigame {
+        height: 265px; /* ★★★ 下に表示されるリストの高さを調整する必要あり。1 item is 53 ★★★ */
+        background: #fff;
+        opacity: 1;
+    }
+    .minigame p {
+        margin: 15px 10px
+    }
+    /* ★★★ .minigame ★★★ */
+
+    /* ★★★ .surport ★★★ */
+    /*中身を非表示にしておく .surport*/
+    .surport {
+        height: 0;
+        padding: 0;
+        overflow: hidden;
+        opacity: 0;
+        transition: 0.8s;
+    }
+    /*クリックで中身表示 .surport*/
+    .acc:checked + label + .surport {
+        height: 159px; /* ★★★ 下に表示されるリストの高さを調整する必要あり。★★★ */
+        background: #fff;
+        opacity: 1;
+    }
+    .surport p {
+        margin: 15px 10px
+    }
+    /* ★★★ .surport ★★★ */
+
+    /* ★★★ .cm ★★★ */
+    /*中身を非表示にしておく .cm*/
+    .cm {
+        height: 0;
+        padding: 0;
+        overflow: hidden;
+        opacity: 0;
+        transition: 0.8s;
+    }
+    /*クリックで中身表示 .cm*/
+    .acc:checked + label + .cm {
+        height: 318px; /* ★★★ 下に表示されるリストの高さを調整する必要あり。★★★ */
+        background: #fff;
+        opacity: 1;
+    }
+    .cm p {
+        margin: 15px 10px
+    }
+    /* ★★★ .cm ★★★ */
+
+    /* ★★★ .dev ★★★ */
+    /*中身を非表示にしておく .dev*/
+    .dev {
+        height: 0;
+        padding: 0;
+        overflow: hidden;
+        opacity: 0;
+        transition: 0.8s;
+    }
+    /*クリックで中身表示 .dev*/
+    .acc:checked + label + .dev {
+        height: 53px; /* ★★★ 下に表示されるリストの高さを調整する必要あり。★★★ */
+        background: #fff;
+        opacity: 1;
+    }
+    .dev p {
+        margin: 15px 10px
+    }
+    /* ★★★ .dev ★★★ */
+}
+
+/* はじめから開いてるやつ */
+.cssCloseBox {
+    margin: 0;
+    padding: 0;
+    max-width: 100%;/*最大幅*/
+    label {
+        display: block;
+        margin: 1.5px 0;
+        padding : 13px 12px;
+        color: #FFF;
+        font-weight: bold;
+        background: #848484;
+        cursor :pointer;
+        transition: all 0.5s;
+        &:before { /*アイコンを表示*/
+            font-family: "Font Awesome 5 Free";
+            content: '\f078';
+            font-weight: 900;
+            padding-right: 8px;
+        }
+        &:hover { /*ラベルホバー時*/
+            background: hsl(0, 0%, 47%); 
+        }
+    }
+    input { /*チェックは隠す*/
+        display: none;
+    }
+    /*アイコンを入れ替える*/
+    .acc:checked + label:before {
+        font-family: "Font Awesome 5 Free";
+        content: '\f054';
+        font-weight: 900;
+    }
+
+    /* ★★★ .sample ★★★ */
+    /*中身を非表示にしておく .sample*/
+    .sample {
+        height: 53px; /* ★★★ 下に表示されるリストの高さを調整する必要あり。★★★ */
+        background: #fff;
+        opacity: 1;
+        transition: 0.8s;
+    }
+    /*クリックで中身表示 .sample*/
+    .acc:checked + label + .sample {
+        height: 0;
+        padding: 0;
+        overflow: hidden;
+        opacity: 0;
+    }
+    .sample p {
+        margin: 15px 10px
+    }
+    /* ★★★ .sample ★★★ */
+
+    /* ★★★ .main ★★★ */
+    /*中身を非表示にしておく .main*/
+    .main {
+        height: 318px; /* ★★★ 下に表示されるリストの高さを調整する必要あり。★★★ */
+        background: #fff;
+        opacity: 1;
+        transition: 0.8s;
+    }
+    /*クリックで中身表示 .main*/
+    .acc:checked + label + .main {
+        height: 0;
+        padding: 0;
+        overflow: hidden;
+        opacity: 0;
+    }
+    .main p {
+        margin: 15px 10px
+    }
+    /* ★★★ .main ★★★ */
+}
