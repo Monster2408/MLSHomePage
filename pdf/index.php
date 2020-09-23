@@ -83,16 +83,16 @@ $config = include($_SERVER["DOCUMENT_ROOT"] . '/assets/config.php');
                                 foreach ($x["urls"]["value"] as $y) {
                                     if ($i < 2) {
                                         $i++;
-                                        $str = $str . "<a href='".$y."'>"."FILE.".$n."</a> ";
+                                        $str = $str . "<a href='".$y."' target='_blank'>"."FILE.".$n."</a> ";
                                     } else {
                                         $i = 0;
-                                        $str = $str . "<a href='".$y."'>"."FILE.".$n."</a><br>";
+                                        $str = $str . "<a href='".$y."' target='_blank'>"."FILE.".$n."</a><br>";
                                     }
                                     $n++;
                                     $ys++;
                                 }
                             } else {
-                                $str = "<a href='".$x["urls"]["value"]."'>"."FILE.1</a>";
+                                $str = "<a href='".$x["urls"]["value"]."' target='_blank'>"."FILE.1</a>";
                             }
 
                             print_r($str.'</td></th>');
