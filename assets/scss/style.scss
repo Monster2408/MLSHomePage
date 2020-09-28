@@ -1,20 +1,9 @@
 @charset "utf-8";
-/* @import url('https://fonts.googleapis.com/css?family=Noto+Sans+JP|Reem+Kufi&display=swap'); */
 
 $mainColor: #F5A9A9;
 
-div.footer-mc {
-	width:900px;
-    height:auto;
-    margin-right: auto;
-    margin-left: auto;
-}
-
-/* 
-    フッターとメインコンテンツが重なることを防ぐため
-*/
-$footer-height: 500px; /*パソコン用*/
-$smart-footer-height: 590px; /* スマホ用 */
+$footer-height: 550px; /*パソコン用*/
+$smart-footer-height: 820px; /* スマホ用 */
 
 * {
     margin: 0;
@@ -38,61 +27,20 @@ body {
     width: 100%;
 }
 
-/* 点滅システム */
-.blinking{
-	-webkit-animation:blink 1.5s ease-in-out infinite alternate;
-    -moz-animation:blink 1.5s ease-in-out infinite alternate;
-    animation:blink 1.5s ease-in-out infinite alternate;
-}
-@-webkit-keyframes blink{
-    0% {opacity:0;}
-    100% {opacity:1;}
-}
-@-moz-keyframes blink{
-    0% {opacity:0;}
-    100% {opacity:1;}
-}
-@keyframes blink{
-    0% {opacity:0;}
-    100% {opacity:1;}
+h1.design {
+	color: #960202;/*文字色*/
+	padding: 0.5em 0;/*上下の余白*/
+	border-top: solid 3px $mainColor;/*上線*/
+	border-bottom: solid 3px $mainColor;/*下線*/
+	text-align: center;
+	margin-top: 25px;
+	margin-bottom: 25px;
 }
 
-/*
-    FAQで使用してるアコーディオンメニューのCSS
-*/
-#acMenu dt{
-    display:block;
-    width:95%;
-    height:auto;
-    padding: 30px;
-    border: #666 1px solid;
-    cursor:pointer;
-    margin-right: auto;
-    margin-left: auto;
-}
-#acMenu dd{
-    width:95%;
-    height:auto;
-    padding: 30px;
-    border-right: #666 1px solid;
-    border-left: #666 1px solid;
-    border-bottom: #666 1px solid;
-    display:none;
-    margin-right: auto;
-    margin-left: auto;
-    margin-top: -50px;
-}
-#acMenu dt.active {
-    font-weight: bold;
-    border-bottom: none;
-}
-#acMenu dd ul ul.list {
-    list-style-image: none;
-    color: #000000;
-    border: dashed 2px #01DF01;
-    background: #9FF781;
-    padding: 0.5em 0.5em 0.5em 2em;
-    list-style-type: circle;
+h2.design {
+	background: linear-gradient(transparent 70%, $mainColor 70%);
+	padding-top: 25px;
+	margin-bottom: 25px;
 }
 
 /* 
@@ -150,108 +98,6 @@ div.or_box {
     }
 }
 
-span.unimp:before {
-    font-family: "Font Awesome 5 Free";
-    content: '\f071';
-    color: #ff0000;
-    font-weight: 900;
-    text-align: right;
-    padding-right: 0;
-    margin-right: 5px;
-}
-
-/*
-    ポップアップ用
-*/
-.popup-wrap {
-    button.open,
-    button.close {
-        display:inline-block;
-        vertical-align:middle;
-        border-radius:30px;
-        margin:.20rem;
-        font-size: 1rem;
-        color:#666666;
-        background:	#ffffff;
-        border:1px solid #666666;  
-        &:hover {
-            border:1px solid #666666;
-            background:#666666;
-            color:#ffffff;
-        }
-    }
-    .popup-overlay{
-        /*Hides pop-up when there is no "active" class*/
-        visibility:hidden;
-        position:absolute;
-        background:#ffffff;
-        border:3px solid #666666;
-        width:98%;
-        height:96%;
-        left:1%;
-        &.active{
-            /*displays pop-up when "active" class is present*/
-            visibility:visible;
-            text-align:center;
-        }
-    }
-    
-    .popup-content {
-        /*Hides pop-up content when there is no "active" class */
-        visibility:hidden;
-        &.active {
-            /*Shows pop-up content when "active" class is present */
-            visibility:visible;
-        }
-    }
-}
-
-/* 
-	YouTube用CSS
-*/
-
-.video {
-	position: relative;
-	height: 0;
-	padding: 30px 0 56.25%;
-    overflow: hidden;
-    iframe {
-        position: absolute;
-        top: 0;
-        left: 0;
-        width: 100%;
-        height: 100%;
-    }
-}
-
-div.game_creator {
-	text-align: right;
-}
-
-/* 
-	タイトルデザイン
-*/
-
-h1.design {
-	color: #960202;/*文字色*/
-	padding: 0.5em 0;/*上下の余白*/
-	border-top: solid 3px $mainColor;/*上線*/
-	border-bottom: solid 3px $mainColor;/*下線*/
-	text-align: center;
-	margin-top: 25px;
-	margin-bottom: 25px;
-}
-
-h2.design {
-	background: linear-gradient(transparent 70%, $mainColor 70%);
-	padding-top: 25px;
-	margin-bottom: 25px;
-}
-
-/* 
-	目次デザイン
-*/
-
 ul.mokuji {
 	color: $mainColor;/*文字色*/
 	border: dashed 2px $mainColor;/*破線 太さ 色*/
@@ -261,19 +107,6 @@ ul.mokuji {
         line-height: 1.5;
         padding: 0.5em 0;
     }
-}
-
-.clear {
-    clear: both;
-    hr {
-        display:none;
-    }
-}
-
-abbr {
-    border-bottom: 1px dotted;
-    text-decoration: none;
-    cursor: help;
 }
 
 div.wrapper {
@@ -322,164 +155,8 @@ div.wrapper {
     }
 }
 
-table.design {
-	border: 1px solid black;
-}
-
-h1.error {
-    padding: 0.4em 0.5em;/*文字の上下 左右の余白*/
-    color: #494949;/*文字色*/
-    background: #ff7f50;/*背景色*/
-    border-left: solid 5px #dc143c;/*左線*/
-    border-bottom: solid 3px #d2691e;/*下線*/
-}
-.under {
-    border-bottom: double 5px #808080;
-}
-.error {
-    margin-top: 10px;
-}
-
-article {
-    display: flex;
-    margin-bottom: 20px;
-    padding: 20px;
-    border-radius: 5px;
-    box-sizing: border-box;
-    box-shadow: 0 0 5px #999;
-    span.version {
-        margin-left: 10px;
-    }
-    figure.samune {
-        margin-right: 20px;
-        width: 100px;
-        height: 100px;
-        position: relative;
-        img {
-            min-width: 100px;
-            max-width: 100%;
-            vertical-align: top;
-        }
-        p.popular {
-            position: absolute;
-            top: 0;/*画像の左上に配置*/
-            left: 0;
-            margin: 0; /*余計な隙間を除く*/
-            color: white;/*文字を白に*/
-            background: skyblue;/*背景色*/
-            font-size: 15px;
-            line-height: 1;/*行高は1に*/
-            padding: 5px 10px;/*文字周りの余白*/
-        }
-    }
-}
-
-ul.newsList {
-    display: flex;
-    flex-flow: row wrap;
-    border-bottom: 1px dotted #999;
-    padding: 10px 0;
-}
-
-ul.newsList li {
-    display: block;
-    margin: 10px 10px;
-}
-
-ul.newsList li:nth-child(-n + 3) {
-    flex-basis: 130px;
-}
-
-ul.newsList li:nth-child(2) {
-    color: #fff;
-    font-size: 12px;
-    padding: 5px 10px;
-    text-align: center;
-    background-color: #3c2fb7;
-}
-
-ul.newsList li:nth-child(3) {
-    flex-basis: auto;
-}
-
-ul.newsList a {
-    color: #6E6E6E;
-    text-decoration:none;
-    font-weight: bold;
-}
-
-ul.newsList a:hover {
-    text-decoration:underline;
-}
-
-ul.newsList span.new {
-    margin-right: 10px;
-    color: red;
-}
-
-#news-text-wrap a {
-    color: #6E6E6E;
-    text-decoration:none;
-    font-weight: bold;
-    margin-right: 0;
-}
-
-#news-text-wrap a:hover {
-    text-decoration:underline;
-}
-
-/* === ラジオボタンは非表示 ================== */
-#langChenge {
-    input[type="radio"]{
-        display: none;
-    }
-    label{
-        display: inline-block;
-        border: 1px solid #ccc;
-        box-shadow: 2px 2px #999;
-        padding: 2px 6px;
-    }
-    img.country {
-        margin-top: 5px;
-    }
-}
-
-.langButton {
-    margin-bottom: 10px;
-}
-            
-/* === 選択されていない言語は非表示にする ==== */
-#langJa {
-    &:not(:checked) ~ * *:lang(ja) {
-        display: none;
-    }
-    &:checked ~ label[for="langJa"] {
-        background : #ffa64d;
-        font-weight: bold;
-    }
-}
-#langEn {
-    &:not(:checked) ~ * *:lang(en) {
-        display: none;
-    }
-    &:checked ~ label[for="langEn"] {
-        background : #ffa64d;
-        font-weight: bold;
-    }
-}
-
-@media screen and (max-width: 299px) {
-    h1 {
-        font-size: 24px;
-    }
-    h2 {
-        font-size: 22px;
-    }
-}
 @media screen and (max-width: 920px) {
-	div.footer-mc {
-		width: 100%;
-    }
+
 	/* ELSE */
 	div.text_box {
 		width:100%;
@@ -499,7 +176,6 @@ ul.newsList span.new {
 		padding-bottom: $smart-footer-height;/*←footerの高さ*/
 	}
 	div.pc_cm {
-        display:none;
-        margin: 0;
+		display:none;
 	}
 }
