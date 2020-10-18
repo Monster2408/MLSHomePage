@@ -92,22 +92,7 @@ $config = include($_SERVER["DOCUMENT_ROOT"] . '/assets/config.php');
 						<dt>
 							<ul class="ac">
 								<li>
-									二つ目　PayPalを使用
-								</li>
-							</ul>
-						</dt>
-						<dd>
-							<ul class="ac">
-								<li>
-									<p><a href="https://www.paypal.me/mlserver" target="_blank">https://www.paypal.me/mlserver</a>にて募金を受け付けております。</p>
-								</li>
-							</ul>
-						</dd>
-
-						<dt>
-							<ul class="ac">
-								<li>
-									三つ目　Amazonギフトカードを使用
+									二つ目　Amazonギフトカードを使用
 								</li>
 							</ul>
 						</dt>
