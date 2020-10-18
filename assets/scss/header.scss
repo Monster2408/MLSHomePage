@@ -390,7 +390,7 @@ header {
     }
     /*クリックで中身表示 .dev*/
     .acc:checked + label + .dev {
-        height: 53px; /* ★★★ 下に表示されるリストの高さを調整する必要あり。★★★ */
+        height: 106px; /* ★★★ 下に表示されるリストの高さを調整する必要あり。★★★ */
         background: #fff;
         opacity: 1;
     }
@@ -457,7 +457,7 @@ header {
     /* ★★★ .main ★★★ */
     /*中身を非表示にしておく .main*/
     .main {
-        height: 318px; /* ★★★ 下に表示されるリストの高さを調整する必要あり。★★★ */
+        height: 265px; /* ★★★ 下に表示されるリストの高さを調整する必要あり。★★★ */
         background: #fff;
         opacity: 1;
         transition: 0.8s;

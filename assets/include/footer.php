@@ -20,8 +20,8 @@
 				<span class="footer-menu-title">MLS</span>
 				<ul>
 					<li class="itm"><a href="<?php echo $conf["url"]; ?>/">トップページ</a></li>
-					<li class="itm"><a href="<?php echo $conf["url"]; ?>/terms">利用規約</a></li>
-					<li class="itm"><a href="<?php echo $conf["url"]; ?>/guildline">ガイドライン</a></li>
+					<li class="itm"><a href="<?php echo $conf["url"]; ?>/terms">利用規約・ガイドライン</a></li>
+					<!--<li class="itm"><a href="<?php //echo $conf["url"]; ?>/guildline">ガイドライン</a></li>-->
 				</ul>
 				<div class=pc_cm>
 					<?php

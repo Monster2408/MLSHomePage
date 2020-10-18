@@ -485,7 +485,7 @@ header {
 }
 
 .cssOpenBox .acc:checked + label + .dev {
-  height: 53px;
+  height: 106px;
   /* ★★★ 下に表示されるリストの高さを調整する必要あり。★★★ */
   background: #fff;
   opacity: 1;
@@ -569,7 +569,7 @@ header {
 }
 
 .cssCloseBox .main {
-  height: 318px;
+  height: 265px;
   /* ★★★ 下に表示されるリストの高さを調整する必要あり。★★★ */
   background: #fff;
   opacity: 1;

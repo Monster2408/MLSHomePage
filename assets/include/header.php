@@ -23,7 +23,6 @@
 							<a href="<?php echo $conf["url"]; ?>/"><li>HOME</li></a>
 							<a href="<?php echo $conf["url"]; ?>/24h/"><li>24H鯖</li></a>
 							<a href="<?php echo $conf["url"]; ?>/admin"><li>運営陣一覧</li></a>
-							<a href="<?php echo $conf["url"]; ?>/sponsor"><li>会員（スポンサー）制</li></a>
 							<a href="<?php echo $conf["url"]; ?>/donation"><li>寄付方法</li></a>
 							<a href="<?php echo $conf["url"]; ?>/staff"><li>スタッフ募集</li></a>
 						</ul>
@@ -85,6 +84,7 @@
 					<div class="dev">
 						<!--ここに隠す中身-->
 						<ul>
+							<a href="<?php echo $conf["url"]; ?>/dev/plugin"><li>PluginDeveloper向け</li></a>
 							<a href="<?php echo $conf["url"]; ?>/dev/skript"><li>Skripter向け</li></a>
 						</ul>
 					</div>

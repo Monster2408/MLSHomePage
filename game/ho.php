@@ -56,13 +56,15 @@ $config = include($_SERVER["DOCUMENT_ROOT"] . '/assets/config.php');
 					</div>
 					<h2 class="design">基本ルール</h2>
 					<div class="or_box">
-
+						<ul>
+						<li>あらゆるアイテムを駆使して逃走する逃側とそれを阻止して仲間を増やし続ける鬼側の鬼ごっこです。</li>
+						<li>鬼の持つ情報端末（本）はスポーンポイントにTPすることができます。</li>
+						<li>ゲーム時間は600秒です。</li>
+						</ul>
 					</div>
 					<h2 class="design">禁止・注意事項</h2>
 					<div class="or_box">
-						<ul>
-							<li>透明化中にアイテムを持つと鬼に見えてしまいます。</li>
-						</ul>
+
 					</div>
 				</div>
 			</div>
