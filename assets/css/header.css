@@ -2,6 +2,7 @@
 /*ヘッダーまわりはサイトに合わせて調整してください*/
 header {
   padding: 10px;
+  margin: 0;
   background: #F5A9A9;
   height: 50px;
   /*ヘッダーの高さ*/
@@ -13,6 +14,7 @@ header {
   /*ヘッダーの文字の色*/
   position: fixed;
   /*←絶対位置*/
+<<<<<<< HEAD
   z-index: 10000;
 }
 
@@ -586,4 +588,8 @@ header {
 
 .cssCloseBox .main p {
   margin: 15px 10px;
+=======
+  z-index: 9999;
+>>>>>>> b0e70e6dcd736e9a1825497e781df8c51dcadfa6
 }
+/*# sourceMappingURL=header.css.map */

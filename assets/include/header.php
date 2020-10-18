@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 <header>
 	<div class="header-logo-menu">
 		<div id="nav-drawer">
@@ -130,4 +131,8 @@
 			</div>
 		</div>
 	</div>
+=======
+<header>
+    <p>header</p>
+>>>>>>> b0e70e6dcd736e9a1825497e781df8c51dcadfa6
 </header>

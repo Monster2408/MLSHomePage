@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 <a href="" class="topBtn" id="topBtn">TOP</a><!--/固定ボタン-->
 <footer>
 	<script>
@@ -125,4 +126,10 @@
 	<hr />
     <p id="copyright"><small>&copy; 2018-2020 MonsterLifeServer All Rights Reserved.</small></p>
 </footer>
+=======
+<a href="" class="topBtn" id="topBtn">TOP</a><!--/固定ボタン-->
+<footer>
+    <p>footer</p>
+</footer>
+>>>>>>> b0e70e6dcd736e9a1825497e781df8c51dcadfa6
 <script type="text/javascript" charset="utf-8" src="<?php echo $conf["url"]; ?>/assets/js/footer.js"></script>

@@ -10,6 +10,9 @@ $(document).ready(function(){
 		scrollPosition = $(window).height() + $(window).scrollTop(); //現在地 
 		footHeight = $("footer").innerHeight(); //footerの高さ（＝止めたい位置）
 		width = window.innerWidth;
+		if ( $(".footer-mc").innerHeight() > 0 ) {
+			footHeight = footHeight + $(".footer-mc").innerHeight();
+		}
 
 		if ( scrollHeight - scrollPosition <= footHeight ) { //ドキュメントの高さと現在地の差がfooterの高さ以下になったら
 			if ( width <= 500 ) {

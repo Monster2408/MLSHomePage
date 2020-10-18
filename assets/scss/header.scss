@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 $pos: 10000;
 $mainColor: #F5A9A9;
 /*ヘッダーまわりはサイトに合わせて調整してください*/
@@ -474,3 +475,22 @@ header {
     }
     /* ★★★ .main ★★★ */
 }
+=======
+@charset "utf-8";
+
+$pos: 9999;
+
+$mainColor: #F5A9A9;
+/*ヘッダーまわりはサイトに合わせて調整してください*/
+header {
+    padding:10px;
+    margin: 0;
+    background: $mainColor;
+    height: 50px; /*ヘッダーの高さ*/
+    width: 100%; /*ヘッダーの横幅*/
+    background-color: $mainColor; /*ヘッダーの背景色*/
+    color: white; /*ヘッダーの文字の色*/
+    position:fixed;/*←絶対位置*/
+    z-index: $pos;
+}
+>>>>>>> b0e70e6dcd736e9a1825497e781df8c51dcadfa6
