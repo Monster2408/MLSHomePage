@@ -7,8 +7,11 @@ $config = include($_SERVER["DOCUMENT_ROOT"] . '/assets/config.php');
 <!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01//EN">
 <html lang="ja">
 	<head>
-		<?php echo $html["common_head"]; ?>
-		<title>503 エラー | MonsterLifeServer</title>
+        <?php echo $html["common_head"]; ?>
+		<style>
+
+		</style>
+		<title>PluginDeveloper向け | MonsterLifeServer</title>
 	</head>
 	<body>
 		<?php include( $_SERVER["DOCUMENT_ROOT"] . "/assets/include/header.php"); ?>
@@ -26,16 +29,17 @@ $config = include($_SERVER["DOCUMENT_ROOT"] . '/assets/config.php');
 
 						<li itemprop="itemListElement" itemscope
 							itemtype="https://schema.org/ListItem">
-							<a itemprop="item" href="<?php echo $conf["url"]; ?>/error/503">
-								<span itemprop="name">503エラー</span>
+							<a itemprop="item" href="<?php echo $conf["url"]; ?>/dev/plugin">
+								<span itemprop="name">PluginDeveloper向け</span>
 							</a>
 							<meta itemprop="position" content="2" />
 						</li>
 					</ol>
-					<h1 class="error">503 Service Temporarily Unavailable</h1>
-					<h2 class="error"><span class="under">接続に失敗しました。</span></h2>
-					<p class="error">申し訳ありません。現在サーバーに集中的にアクセスされ、サーバーがダウンしています。</p>
-					<p class="error">お手数ですがしばらくしてからまたアクセスしてください。</p>
+                    <h1 class="design">PluginDeveloper向け開発ページ</h1>
+                    <h2 class="design">はじめに</h2>
+                    <p>
+                        基本的にソースコードは公開してはなりません。条件付きで出ることが多いですが、許可の出たもののみ可能です。
+                    </p>
 				</div>
 			</div>
 			<?php include( $_SERVER["DOCUMENT_ROOT"] . "/assets/include/footer.php"); ?>
